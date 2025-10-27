@@ -2,7 +2,6 @@ import Product from "./Product"
 import { useState , useEffect,createContext, useContext } from "react";
 import cors from "cors"
 import Product1 from "./Product1"
-import Product2 from "./Product2";
 
 export const ProductContext = createContext();
 const Products =() =>{
