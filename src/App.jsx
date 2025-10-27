@@ -18,15 +18,26 @@ function App() {
 
 
 
-     useEffect(()=>{
+//      useEffect(()=>{
+//   fetch("https://api.allorigins.win/raw?url=https://www.fruityvice.com/api/fruit/all")
+//     .then(response => response.json())
+//     .then(data=>{
+//       setProducts(data);
+//       console.log(data)
+//     })
+//     .catch(err => console.error(err));
+// },[]);
+useEffect(() => {
   fetch("https://api.allorigins.win/raw?url=https://www.fruityvice.com/api/fruit/all")
-    .then(response => response.json())
-    .then(data=>{
+    .then(res => res.json())
+    .then(data => {
       setProducts(data);
-      console.log(data)
+      console.log("✅ Fruits fetched via AllOrigins:", data);
     })
-    .catch(err => console.error(err));
-},[]);
+    .catch(err => console.error("❌ Error fetching fruits:", err));
+}, []);
+
+
 
 
     useEffect(()=>{
